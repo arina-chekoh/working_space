@@ -1,0 +1,29 @@
+FROM python:3.8-slim 
+WORKDIR /data
+RUN python -m pip install Django
+
+
+
+>> notepad dockerfile : สร้าง dockerfile แล้วลบนามสกุลออก
+>> ren DockerFile.txt DockerFile 
+
+-- เปิด vs code --
+FROM python:3.8-slim 
+WORKDIR /data
+RUN python -m pip install Django
+
+-- ในช่อง terminal vs code -- 
+>> docker build -t python3-django-images .
+>> docker images 
+>> docker volume create --driver local --opt type=none --opt device="C:\Users\Lenovo\OneDrive\FutureSkill\Dockerfile\data" --opt o=bind python-volume
+>> docker volume ls 
+>> dir 
+>> mkdir data 
+>> docker run -v "C:\Users\Lenovo\OneDrive\FutureSkill\Dockerfile\data:\data" -p 8000:8000 --rm -it --entrypoint bash python3-django-images
+>> git clone https://gitlab.com/storemesh/project-template/Infrastructure/docker-template.git 
+( ถ้าใช้ไม่ได้ให้โหลดไฟล์มาแล้วเปิด terminaldocker compose ส)
+>> docker compose up --build
+
+
+
+
